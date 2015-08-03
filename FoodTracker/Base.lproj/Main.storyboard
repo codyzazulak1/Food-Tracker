@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xsy-mZ-9tO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Your Meals-->
+        <scene sceneID="xBP-6m-RQb">
+            <objects>
+                <tableViewController id="KkT-wk-686" customClass="MealTableViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dd0-J9-d99">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTableViewCell" rowHeight="93" id="KMG-gH-hxg" customClass="MealTableViewCell" customModule="FoodTracker" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KMG-gH-hxg" id="JeX-4x-JXL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-Iw-SIt">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="92" id="0NA-fB-Shu"/>
+                                                <constraint firstAttribute="height" constant="92" id="i9R-Ni-346"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="oUU-Hp-xEc"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0NA-fB-Shu"/>
+                                                    <exclude reference="i9R-Ni-346"/>
+                                                    <exclude reference="oUU-Hp-xEc"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="0NA-fB-Shu"/>
+                                                    <include reference="i9R-Ni-346"/>
+                                                    <include reference="oUU-Hp-xEc"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1C-HV-rHs">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-wZ-qZh" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="47" id="6Ly-DI-Xgm"/>
+                                                <constraint firstAttribute="width" constant="240" id="747-kO-3TP"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="6Ly-DI-Xgm"/>
+                                                    <exclude reference="747-kO-3TP"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="6Ly-DI-Xgm"/>
+                                                    <include reference="747-kO-3TP"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b1C-HV-rHs" firstAttribute="top" secondItem="JeX-4x-JXL" secondAttribute="topMargin" id="0ra-OC-3dA"/>
+                                        <constraint firstItem="b1C-HV-rHs" firstAttribute="leading" secondItem="NYM-Iw-SIt" secondAttribute="trailing" constant="8" id="C1t-iN-guS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nIJ-wZ-qZh" secondAttribute="bottom" constant="0.5" id="FLF-gC-dP3"/>
+                                        <constraint firstItem="b1C-HV-rHs" firstAttribute="trailing" secondItem="JeX-4x-JXL" secondAttribute="trailingMargin" id="dFK-Ob-vxC"/>
+                                        <constraint firstItem="nIJ-wZ-qZh" firstAttribute="leading" secondItem="NYM-Iw-SIt" secondAttribute="trailing" constant="8" id="gbO-A8-835"/>
+                                        <constraint firstItem="NYM-Iw-SIt" firstAttribute="leading" secondItem="JeX-4x-JXL" secondAttribute="leading" id="krf-9Y-Dvn"/>
+                                        <constraint firstItem="nIJ-wZ-qZh" firstAttribute="top" secondItem="b1C-HV-rHs" secondAttribute="bottom" constant="8" id="rFg-0Q-Hxe"/>
+                                        <constraint firstItem="NYM-Iw-SIt" firstAttribute="top" secondItem="JeX-4x-JXL" secondAttribute="top" constant="1" id="srO-TO-Lp7"/>
+                                        <constraint firstAttribute="bottom" secondItem="NYM-Iw-SIt" secondAttribute="bottom" constant="0.5" id="toA-yN-nQp">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="-0.5"/>
+                                        </constraint>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="NYM-Iw-SIt"/>
+                                            <exclude reference="b1C-HV-rHs"/>
+                                            <exclude reference="nIJ-wZ-qZh"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="krf-9Y-Dvn"/>
+                                            <exclude reference="srO-TO-Lp7"/>
+                                            <exclude reference="toA-yN-nQp"/>
+                                            <exclude reference="0ra-OC-3dA"/>
+                                            <exclude reference="C1t-iN-guS"/>
+                                            <exclude reference="dFK-Ob-vxC"/>
+                                            <exclude reference="FLF-gC-dP3"/>
+                                            <exclude reference="gbO-A8-835"/>
+                                            <exclude reference="rFg-0Q-Hxe"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="NYM-Iw-SIt"/>
+                                            <include reference="b1C-HV-rHs"/>
+                                            <include reference="nIJ-wZ-qZh"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="krf-9Y-Dvn"/>
+                                            <include reference="srO-TO-Lp7"/>
+                                            <include reference="toA-yN-nQp"/>
+                                            <include reference="0ra-OC-3dA"/>
+                                            <include reference="C1t-iN-guS"/>
+                                            <include reference="dFK-Ob-vxC"/>
+                                            <include reference="FLF-gC-dP3"/>
+                                            <include reference="gbO-A8-835"/>
+                                            <include reference="rFg-0Q-Hxe"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="b1C-HV-rHs" id="WW9-o1-JE8"/>
+                                    <outlet property="photoImageView" destination="NYM-Iw-SIt" id="PEH-zU-83L"/>
+                                    <outlet property="ratingControl" destination="nIJ-wZ-qZh" id="ddC-o2-Kez"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="ShowDetail" id="IoS-wS-yLa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KkT-wk-686" id="Asq-hh-mWd"/>
+                            <outlet property="delegate" destination="KkT-wk-686" id="b1y-Cp-xk5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Meals" id="03Z-Dy-9EN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9zN-fe-E0L">
+                            <connections>
+                                <segue destination="ldn-mC-07V" kind="show" identifier="AddItem" id="hbF-Ih-P3K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UR-Qm-J6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="357.75"/>
+        </scene>
+        <!--New Meal-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BB-eY-2Mp">
+                                <rect key="frame" x="16" y="124" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-hh-TaA">
+                                <rect key="frame" x="16" y="162" width="150" height="30"/>
+                                <state key="normal" title="Set Default Label Text">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setDefaultLabelText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2gm-yR-0Vp"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cuh-pO-nzZ">
+                                <rect key="frame" x="16" y="200" width="320" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cuh-pO-nzZ" secondAttribute="height" multiplier="1:1" id="24B-6W-rRj"/>
+                                    <constraint firstAttribute="width" constant="368" id="P0e-SB-n9c"/>
+                                    <constraint firstAttribute="height" constant="368" id="RRM-ml-Grr"/>
+                                    <constraint firstAttribute="width" secondItem="cuh-pO-nzZ" secondAttribute="height" multiplier="1:1" id="mhY-zP-8DM"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="P0e-SB-n9c"/>
+                                        <exclude reference="RRM-ml-Grr"/>
+                                        <exclude reference="mhY-zP-8DM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="P0e-SB-n9c"/>
+                                        <include reference="RRM-ml-Grr"/>
+                                        <include reference="mhY-zP-8DM"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5sn-tv-1Xl" appends="YES" id="wL5-Ct-CmL"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-bJ-t69" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="F5R-UJ-VH7"/>
+                                    <constraint firstAttribute="width" constant="240" id="ukI-bB-dUP"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="F5R-UJ-VH7"/>
+                                        <exclude reference="ukI-bB-dUP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="F5R-UJ-VH7"/>
+                                        <include reference="ukI-bB-dUP"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4BB-eY-2Mp" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35.5" id="34G-eR-fWq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="5cf-bJ-t69" firstAttribute="top" secondItem="cuh-pO-nzZ" secondAttribute="bottom" constant="8" id="8hB-gg-srP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                            </constraint>
+                            <constraint firstItem="4BB-eY-2Mp" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="CaU-xg-ONS"/>
+                            <constraint firstItem="cuh-pO-nzZ" firstAttribute="top" secondItem="NWW-hh-TaA" secondAttribute="bottom" constant="8" id="Czo-LB-PPI"/>
+                            <constraint firstItem="cuh-pO-nzZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Q4D-yO-zbu"/>
+                            <constraint firstItem="NWW-hh-TaA" firstAttribute="top" secondItem="4BB-eY-2Mp" secondAttribute="bottom" constant="8" id="dgi-fC-FPF"/>
+                            <constraint firstItem="cuh-pO-nzZ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ogI-Dg-htV"/>
+                            <constraint firstItem="NWW-hh-TaA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="tIH-nv-mQM"/>
+                            <constraint firstItem="5cf-bJ-t69" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="vJd-uZ-gUj"/>
+                            <constraint firstItem="4BB-eY-2Mp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="vnf-1F-Ofh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="5cf-bJ-t69"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="34G-eR-fWq"/>
+                                <exclude reference="Czo-LB-PPI"/>
+                                <exclude reference="Q4D-yO-zbu"/>
+                                <exclude reference="ogI-Dg-htV"/>
+                                <exclude reference="8hB-gg-srP"/>
+                                <exclude reference="vJd-uZ-gUj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5cf-bJ-t69"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="34G-eR-fWq"/>
+                                <include reference="Czo-LB-PPI"/>
+                                <include reference="Q4D-yO-zbu"/>
+                                <include reference="ogI-Dg-htV"/>
+                                <include reference="8hB-gg-srP"/>
+                                <include reference="vJd-uZ-gUj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Meal" id="MHo-jH-FRw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rJo-5h-4Pg">
+                            <connections>
+                                <action selector="cancel:" destination="vXZ-lx-hvc" id="yVE-EF-BTG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="D1f-IL-ucl">
+                            <connections>
+                                <segue destination="lAz-xh-3Md" kind="unwind" unwindAction="unwindToMealList:" id="2bb-kO-csJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="4BB-eY-2Mp" id="b90-gO-lfS"/>
+                        <outlet property="photoImageView" destination="cuh-pO-nzZ" id="7bH-2T-0QV"/>
+                        <outlet property="ratingControl" destination="5cf-bJ-t69" id="FK8-of-eMA"/>
+                        <outlet property="saveButton" destination="D1f-IL-ucl" id="ruc-zf-pnx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <exit id="lAz-xh-3Md" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="5sn-tv-1Xl">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="vXZ-lx-hvc" id="3Bi-Su-6QE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1591.5" y="357.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gSR-pp-4JZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xsy-mZ-9tO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d97-bj-gMz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KkT-wk-686" kind="relationship" relationship="rootViewController" id="rTD-6T-o8T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Akl-Fh-NFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="357.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z4o-59-86L">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lZe-h2-6nW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ldn-mC-07V" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CDc-bi-fpP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="HgH-FB-ZnI"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1239" y="1010.25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultPhoto" width="320" height="320"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IoS-wS-yLa"/>
+    </inferredMetricsTieBreakers>
+</document>
